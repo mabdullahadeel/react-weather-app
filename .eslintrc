@@ -1,25 +1,6 @@
 {
-    "extends": [
-        "plugin:prettier/recommended",
-        "eslint:recommended",
-        "plugin:vue/recommended",
-        "plugin:vue/essential"
-        //"plugin:prettier/recommended"
-    ],
     "plugins": ["prettier"],
     "parserOptions": {
     "ecmaVersion": 2017
     },
-    "rules": {
-        "prettier/prettier": "error",
-        "vue/html-self-closing": "off",
-        "vue/html-indent": 4,
-        "indent": [
-            2,
-            4
-        ]
-    },
-    "env": {
-        "browser": true
-    }
 }
