@@ -28,8 +28,8 @@ interface Astro {
     sunset: string
 }
 
-interface Hour {
-    time: Date,
+export interface Hour {
+    time: string,
     temp_c: number,
     condition: CurrentCondition,
     humidity: string,

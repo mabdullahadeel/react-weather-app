@@ -6,7 +6,6 @@ import {
     WeatherIcon,
     TemperatureWrapper,
     Temperature,
-    Forecast,
     ForecastWrapper,
     WeatherDetail,
     WeatherDetailsWrapper
@@ -14,7 +13,9 @@ import {
 import BigLabel from '../Common/BigLabel'
 import SmallLabel from '../Common/SmallLabel';
 import Text from '../Common/Text';
+import ForeCastsToday from './ForeCastsToday';
 import { Props, ForeCast } from './types/ResultsTypes';
+import MediumLabel from '../Common/MediumLabel';
 
 function Result({location, forcasts}: Props) {
 
@@ -86,6 +87,14 @@ function Result({location, forcasts}: Props) {
                 <Text align="center">Sunset</Text>
                 </WeatherDetail>
             </WeatherDetailsWrapper>
+            <ForecastWrapper>
+                <MediumLabel weight="400">Today's Forecast</MediumLabel>
+                <ForeCastsToday hourforecastList={currentForeCast?.hour}/>
+            </ForecastWrapper>
+            <ForecastWrapper>
+                <MediumLabel weight="400">10 Day Forecast</MediumLabel>
+                <ForeCastsToday hourforecastList={currentForeCast?.hour}/>
+            </ForecastWrapper>
         </Results>
     )
 }

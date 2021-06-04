@@ -113,4 +113,16 @@ export const Forecast = styled.div`
     @media ${device.laptop} {
     order: 4;
     }
+
+    &::-webkit-scrollbar {
+        height: 7px;
+        color: green;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #bdbdbd;
+    }
 `;
