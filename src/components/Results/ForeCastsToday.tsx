@@ -22,4 +22,4 @@ function ForeCastsToday({hourforecastList}:Props) {
     )
 }
 
-export default ForeCastsToday;
+export default ForeCastsToday

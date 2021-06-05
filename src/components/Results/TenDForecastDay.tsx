@@ -1,15 +1,17 @@
 import React from 'react';
 import Text from '../Common/Text';
 import SmallLabel from '../Common/SmallLabel';
-import { ForecastWrapper, WeatherIcon } from './styles/ForecastHourStyles';
+import { WeatherIcon } from './styles/ForecastHourStyles';
+import { TenDayForecastWrapper } from './styles/TenDayForecast'
 import { Hour } from './types/ResultsTypes';
 import droplet from '../../assets/droplet.png';
 
-function ForecastHour({condition, humidity, temp_c, time}: Hour) {
+
+function TenDForecastDay({condition, humidity, temp_c, time}: Hour) {
     return (
-        <ForecastWrapper>
+        <TenDayForecastWrapper>
             <Text align="cener">
-                {time.split(" ")[1]}
+                {time}
             </Text>
             <WeatherIcon src={condition.icon} />
             <SmallLabel align="center" weight="400">
@@ -18,8 +20,8 @@ function ForecastHour({condition, humidity, temp_c, time}: Hour) {
             <SmallLabel align="center" weight="400">
                 <img height="24px" src={droplet} alt="" />{humidity}
             </SmallLabel>
-        </ForecastWrapper>
+        </TenDayForecastWrapper>
     )
 }
 
-export default ForecastHour
+export default TenDForecastDay

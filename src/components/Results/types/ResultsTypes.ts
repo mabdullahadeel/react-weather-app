@@ -42,7 +42,7 @@ export interface ForeCast {
     hour:  Hour[]
 }
 
-interface Forecasts {
+export interface Forecasts {
     forecastday: ForeCast[]
 }
 

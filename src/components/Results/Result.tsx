@@ -16,6 +16,7 @@ import Text from '../Common/Text';
 import ForeCastsToday from './ForeCastsToday';
 import { Props, ForeCast } from './types/ResultsTypes';
 import MediumLabel from '../Common/MediumLabel';
+import TenDayForecast from './TenDayForecast';
 
 function Result({location, forcasts}: Props) {
 
@@ -93,7 +94,7 @@ function Result({location, forcasts}: Props) {
             </ForecastWrapper>
             <ForecastWrapper>
                 <MediumLabel weight="400">10 Day Forecast</MediumLabel>
-                <ForeCastsToday hourforecastList={currentForeCast?.hour}/>
+                <TenDayForecast daysData={forcasts}/>
             </ForecastWrapper>
         </Results>
     )
