@@ -31,7 +31,8 @@ function Result({location, forcasts}: Props) {
         setHourData(targettedData[0])
     } 
 
-    useEffect(() => {        
+    useEffect(() => {
+        setHourData(null);
         const currentDay = forcasts.forecastday.filter((day) => {
             return day.date === location.localtime.split(" ")[0]
         })

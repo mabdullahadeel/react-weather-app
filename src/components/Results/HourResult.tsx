@@ -10,9 +10,6 @@ interface Props {
 }
 
 function HourResult({hourData} : Props) {
-    const getFormatedDate = (dateStr: string) => {
-        return new Date(dateStr).toDateString()
-    }
     return (
         <HourDeatailsWrapper>
             <HourDisplayer>
@@ -23,7 +20,7 @@ function HourResult({hourData} : Props) {
             </HourDisplayer>
             {hourData?.map((data) => (
                 <HourDisplayer key={data.temp_c * Math.random() + Math.random()}>
-                    <SmallLabel style={{ fontSize: "17px" }}>{getFormatedDate(data.time)}</SmallLabel>
+                    <SmallLabel style={{ fontSize: "17px" }}>{data.time.split(" ")[1]}</SmallLabel>
                     <SmallLabel style={{ fontSize: "17px" }}>{data.temp_c}&#176;</SmallLabel>
                     <SmallLabel style={{ fontSize: "17px" }}>
                         <WeatherIcon src={data.condition.icon} />
