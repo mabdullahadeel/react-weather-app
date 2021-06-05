@@ -11,7 +11,8 @@ function ForeCastsToday({hourforecastList}:Props) {
     return(
         <Forecast>
             {hourforecastList?.map((hour) => (
-                <ForecastHour 
+                <ForecastHour
+                    key={hour.temp_c * Math.random()}
                     condition={hour.condition}
                     humidity={hour.humidity}
                     temp_c={hour.temp_c}

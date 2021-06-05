@@ -36,6 +36,7 @@ export interface Hour {
 }
 
 export interface ForeCast {
+    date_epoch: number,
     date: string,
     day: ForecastDay,
     astro: Astro,

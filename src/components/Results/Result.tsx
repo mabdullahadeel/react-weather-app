@@ -17,10 +17,19 @@ import ForeCastsToday from './ForeCastsToday';
 import { Props, ForeCast } from './types/ResultsTypes';
 import MediumLabel from '../Common/MediumLabel';
 import TenDayForecast from './TenDayForecast';
+import HourResult from './HourResult';
 
 function Result({location, forcasts}: Props) {
 
     const [currentForeCast, setCurrentForecast] = useState<ForeCast | null>(null);
+    const [hourData, setHourData] = useState<ForeCast | null>(null);
+
+    const handleSettingHourData = (date: string) => {
+        const targettedData = forcasts.forecastday.filter((day) => {
+            return day.date === date
+        })
+        setHourData(targettedData[0])
+    } 
 
     useEffect(() => {        
         const currentDay = forcasts.forecastday.filter((day) => {
@@ -94,7 +103,12 @@ function Result({location, forcasts}: Props) {
             </ForecastWrapper>
             <ForecastWrapper>
                 <MediumLabel weight="400">10 Day Forecast</MediumLabel>
-                <TenDayForecast daysData={forcasts}/>
+                <TenDayForecast setHourData={handleSettingHourData} daysData={forcasts}/>
+            </ForecastWrapper>
+            <ForecastWrapper>
+                {hourData && 
+                    <HourResult hourData={hourData?.hour}/>
+                }
             </ForecastWrapper>
         </Results>
     )
